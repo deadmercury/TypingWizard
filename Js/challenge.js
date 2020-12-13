@@ -46,6 +46,7 @@ input.addEventListener("blur", clearInput);
 
 function clearInput(){
     input.value = '';
+    tokens[count].classList.remove("current");
     input.removeEventListener("keydown", checker);
     count = 0;
     clear("wrong");
@@ -61,15 +62,18 @@ function clear(className){
 
 function toggler(){
     input.addEventListener("keydown", checker);
+    tokens[count].classList.add("current");
     startTime = new Date;
 }
 
 function checker(e){
     console.log(e.key);
+    tokens[count].classList.remove("current");
     if(e.key == "Backspace"){
         count = --count > 0 ? count : 0;
         tokens[count].classList.remove("wrong");
         tokens[count].classList.remove("right");
+        tokens[count].classList.add("current");
         return;
     }
     if(!(/^[A-Za-z0-9"\.\'\:\-\,\s]$/.test(e.key)) || e.ctrlKey){
@@ -82,6 +86,7 @@ function checker(e){
     else
         tokens[count].classList.add("right");
     ++count;
+    tokens[count].classList.add("current");
     if(count == tokens.length){
         endTime = new Date;
         var minutes = (endTime - startTime)/60000;

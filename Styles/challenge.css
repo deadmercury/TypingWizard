@@ -125,3 +125,16 @@ body{
 #modal, .modalBlur{
     display: none;
 }
+
+.current{
+  color: white;
+  background-color: black;
+  animation: blinker 0.75s ease-in-out infinite;
+}
+
+@keyframes blinker {
+  50%{
+    color: black;
+    background-color: white;
+  }
+}
