@@ -9,13 +9,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>   
+      a{
+        color:white;
+        text-decoration: none;
+      }
+      section {
+        font-family: sans-serif;
+        margin-top: 7.5rem;
+      }
+    </style>
     <title>About</title>
 </head>
 <body>
     <?php 
         include("./header.html");
     ?>
-    <section style="font-family: sans-serif;">
+    <section>
       <p>
         This web application was made by the following students of Ferusson College, Pune for their CSC3513 Computer Science Project – I (T.Y.B.Sc 2020-21) -
       </p>
